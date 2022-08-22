@@ -1,0 +1,66 @@
+.root {
+  position: fixed;
+  width: 20%;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.filterName {
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.filterBlock {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkboxRadio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkboxRadio+label::before {
+  content: '';
+  box-sizing: border-box;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #515b65;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transition: 0.2s;
+}
+
+.checkboxRadio:checked+label::before {
+  background-color: blue;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0 0 0 2px blue;
+}
+
+.checkboxRadio:hover:not(:checked)+label::before {
+  box-shadow: 0 0 3px blue;
+}
+
+.filterType {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(74, 74, 74);
+}
